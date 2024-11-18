@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {FormEvent, useState} from "react";
 
 interface Props {
     getWeather: (city:string) => void
@@ -6,7 +6,7 @@ interface Props {
 
 const Form = ({getWeather}:Props) => {
     const [city,setCity] = useState('');
-    const getCity = (e: React.FormEvent<HTMLFormElement> ) => {
+    const getCity = (e: FormEvent<HTMLFormElement> ) => {
         e.preventDefault();
         getWeather(city);
         setCity('');
